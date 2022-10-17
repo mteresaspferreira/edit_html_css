@@ -1,0 +1,72 @@
+/* buttons */
+.btn {
+  color: #000000;
+  display: block;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.btn-small {
+  padding: 6px 14px;
+  font-size: 12px;
+}
+.btn-medium {
+  padding: 12px 20px;
+}
+.btn-large {
+  padding: 12px 20px;
+}
+.btn-simple::after {
+  content: "";
+  position: relative;
+  top: 3px;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  display: block;
+  transition: all 0.3s ease;
+}
+.btn-simple:hover::after {
+  content: "";
+  width: 100%;
+  background: #000000;
+}
+.btn-rounded {
+  border-radius: 19px;
+}
+.btn-line {
+  border: 1px solid #ecebeb;
+}
+.btn-line:hover {
+  background: #0064da;
+  color: #ffffff;
+  border: 1px solid #0064da;
+}
+.btn-blue {
+  background: #0064da;
+  color: #ffffff;
+}
+.btn-blue:hover {
+  background: #ffffff;
+  color: #0064da;
+  border: 1px solid #0064da;
+}
+.btn-black {
+  background: #000000;
+  color: #ffffff;
+}
+.btn-black:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.btn-white {
+  background: #ffffff;
+  color: #000000;
+}
+.btn-white:hover {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
