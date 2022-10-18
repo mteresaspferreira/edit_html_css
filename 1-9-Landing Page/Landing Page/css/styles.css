@@ -150,7 +150,7 @@ section .container.large {
   left: 0;
   right: 0;
   height: 160vh;
-  width: 100vw;
+  max-width: 100vw;
   object-fit: cover;
 }
 

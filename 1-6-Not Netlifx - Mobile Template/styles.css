@@ -177,7 +177,7 @@ section.preview .nav_preview .desc_preview ul li.list_icon {
 
 section.preview .nav_preview ul.nav_preview_buttons {
   display: flex;
-  gap: 70px;
+  gap: 60px;
   justify-content: center;
   align-content: center;
 }
@@ -303,4 +303,8 @@ section.recommendations article .options ul .more_info::after {
   color: white;
   position: relative;
   top: -6px;
+}
+
+section.documentaries {
+  margin-bottom: 90px;
 }
