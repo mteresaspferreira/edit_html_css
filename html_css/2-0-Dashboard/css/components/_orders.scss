@@ -1,0 +1,114 @@
+//----------------------
+//GENERAL ORDERS
+.orders {
+  .title {
+    color: map-get($map: $black, $key: "100");
+    font-family: $title-font-family;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+}
+
+//----------------------
+// NO ORDERS YET
+.orders {
+  &.no__orders__yet {
+    @include flex(column, center, center);
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: center;
+    .text {
+      color: map-get($map: $black, $key: "30");
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+  }
+}
+
+//----------------------
+// WITH ORDERS
+.orders {
+  .card__header {
+    background: $white;
+    height: 60px !important;
+    margin: -20px 0;
+    padding: 20px;
+    position: sticky;
+    right: 0;
+    top: -22px;
+    width: 100%;
+    z-index: 999;
+    &:before {
+      background-color: $white;
+      content: "";
+      display: block;
+      height: 5px;
+      position: relative;
+      top: -20px;
+      width: 100%;
+      z-index: 999999999;
+    }
+  }
+  .with__orders {
+    width: 100%;
+    .order {
+      border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
+      display: flex;
+      gap: 15px;
+      padding: 15px 0;
+      &__left {
+        margin-top: 15px;
+      }
+      &__right {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media screen and (max-width: 1290px) {
+        }
+        &__primary {
+          @include flex(column, space-between, start);
+          flex: 1;
+          .name {
+            color: map-get($map: $black, $key: "60");
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            margin-top: 15px;
+          }
+          .price {
+            color: map-get($map: $black, $key: "80");
+            font-size: 15px;
+            font-weight: 500;
+          }
+        }
+        &__secondary {
+          @include flex(column, space-between, end);
+          flex: 1;
+          .date {
+            color: map-get($map: $black, $key: "20");
+            font-size: 12px;
+            margin-bottom: 12px;
+            margin-left: 15px;
+            margin-top: 15px;
+          }
+          .status {
+            border-radius: 8px;
+            line-height: 1;
+            margin-left: 15px;
+            padding: 4px 15px;
+            &__pending {
+              background: rgba(245, 126, 119, 0.12);
+              color: $warning;
+            }
+            &__completed {
+              background: rgba(50, 147, 111, 0.12);
+              color: $success;
+            }
+          }
+        }
+      }
+    }
+  }
+}

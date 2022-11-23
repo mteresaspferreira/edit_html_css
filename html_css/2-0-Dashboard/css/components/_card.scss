@@ -1,0 +1,169 @@
+// -----------------------
+// GENERAL CARD
+.card {
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  min-height: 200px;
+  padding: 20px;
+  width: 100%;
+  @include border-radius;
+  &__medium {
+    min-height: 400px;
+  }
+  &__large {
+    height: 840px;
+    overflow-y: auto;
+  }
+  &.active {
+    background: map-get($map: $primary, $key: "100");
+    *:not(.positive, .negative, .white) {
+      color: $white;
+    }
+  }
+}
+
+// -----------------------
+// CARD HEADER - TOP AND BOTTOM
+.card__header {
+  align-items: center;
+  flex-wrap: wrap;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    &__icon {
+      border-radius: 8px;
+      padding: 8px;
+      img {
+        width: 22px;
+      }
+      &.blue {
+        background-color: map-get($map: $primary, $key: "10");
+      }
+      &.orange {
+        background-color: map-get($map: $secondary, $key: "20");
+      }
+      &.white {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    &__date {
+      color: map-get($map: $black, $key: "10");
+      font-size: 13px;
+      font-weight: 400;
+    }
+    &__title {
+      color: map-get($map: $black, $key: "60");
+      font-size: 17px;
+      font-weight: 600;
+    }
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+}
+
+// -----------------------
+// GRAPHIC BAR HEADER
+.card__header__top {
+  > div {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+// -----------------------
+// CARD MAIN TYPES
+.card__main {
+  display: flex;
+  flex-wrap: wrap;
+
+  //content
+  .column {
+    flex: 1;
+    margin: 15px 15px 0 0;
+    @include flex(column, space-between, inherit);
+    &__title {
+      color: map-get($map: $black, $key: "30");
+      margin-bottom: 12px;
+      text-transform: capitalize;
+      &.negative {
+        color: $warning;
+      }
+    }
+    &__text {
+      color: map-get($map: $black, $key: "60");
+      flex-wrap: wrap;
+      font-size: 20px;
+      font-weight: 500;
+      @include flex;
+    }
+    &_percent {
+      color: map-get($map: $primary, $key: "10");
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0px 0px 0px 5px;
+      position: relative;
+      top: 1px;
+      @media screen and (max-width: 768px) {
+        margin: 5px 0px 8px 5px;
+      }
+      &.positive {
+        color: $success;
+      }
+      &.negative {
+        color: $warning;
+      }
+      &.white {
+        color: map-get($map: $primary, $key: "10");
+      }
+    }
+  }
+
+  //Types
+  &.graphic__big {
+    margin-top: 50px;
+  }
+  &.graphic__small {
+    background-color: map-get($map: $primary, $key: "10");
+    margin-top: 20px;
+  }
+  &.full__height {
+    height: 100%;
+  }
+}
+
+// -----------------------
+// CARD HEADER BOTTOM
+.card__header__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  &__label {
+    color: map-get($map: $black, $key: "20");
+    font-size: 12px;
+    margin: 5px 5px 0 0;
+    &:before {
+      border-radius: 100%;
+      content: "";
+      display: inline-block;
+      height: 8px;
+      margin-right: 10px;
+      width: 8px;
+    }
+    &.label__one::before {
+      background-color: map-get($map: $primary, $key: "100");
+    }
+    &.label__two::before {
+      background-color: map-get($map: $primary, $key: "50");
+    }
+    &.label__three::before {
+      background-color: map-get($map: $secondary, $key: "100");
+    }
+  }
+}

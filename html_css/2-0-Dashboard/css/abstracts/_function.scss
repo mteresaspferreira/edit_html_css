@@ -1,0 +1,16 @@
+$percent: 100%;
+//------------------------
+// CALC COLUMNS WITH
+@for $i from 1 through $percent {
+  .width__#{$i} {
+    width: #{$i} + "%";
+  }
+}
+
+//------------------------
+//CALC COLUMNS HEIGHT
+@for $i from 1 through $percent {
+  .height__#{$i} {
+    height: #{$i} + "%";
+  }
+}

@@ -1,0 +1,114 @@
+// GENERAL MENU
+.menu {
+  @include flex(column, center, inherit);
+  a.menu {
+    background-color: transparent;
+    color: map-get($map: $black, $key: "50");
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding: 15px;
+    width: 100%;
+    @include border-radius;
+    @include flex(row, flex-start, center);
+    @include transition(all);
+    @media screen and (max-width: 1024px) {
+      font-size: 0px;
+      justify-content: center;
+    }
+    .nav__counter:not(:empty) {
+      background: map-get($map: $secondary, $key: "100");
+      border-radius: 100%;
+      color: map-get($map: $black, $key: "100");
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+      @include flex(row, center, center);
+      margin-left: 15px;
+      @include transition(all);
+      @media screen and (max-width: 1024px) {
+        position: absolute;
+        left: 32px;
+        height: 18px;
+        width: 18px;
+        font-size: 9px;
+      }
+    }
+    &::before {
+      @include icon_pseudoElement(22px, 22px);
+      @include transition(all);
+      @media screen and (max-width: 1024px) {
+        &::before {
+          margin-right: 0;
+        }
+      }
+    }
+    &.active,
+    &:hover {
+      background-color: map-get($map: $primary, $key: "100");
+      color: $white;
+      .nav__counter {
+        background: map-get($map: $primary, $key: "10");
+        color: map-get($map: $primary, $key: "100");
+      }
+    }
+  }
+
+  //HOVER AND ACTIVE AFTER AND BEFORE
+  a.menu {
+    &__dashboard {
+      &::before {
+        background-image: url(../../assets/icon_category.svg);
+      }
+      &::hover::before {
+        background-image: url(../../assets/icon_category_hover.svg);
+      }
+      &.active::before {
+        background-image: url(../../assets/icon_category_hover.svg);
+      }
+    }
+    &__orders {
+      &.active::before {
+        background-image: url(../../assets/icon_bag_hover.svg);
+      }
+      &::before {
+        background-image: url(../../assets/icon_bag.svg);
+      }
+      &:hover::before {
+        background-image: url(../../assets/icon_bag_hover.svg);
+      }
+    }
+    &__customers {
+      &::before {
+        background-image: url(../../assets/icon_2User.svg);
+      }
+      &:hover::before {
+        background-image: url(../../assets/icon_2User_hover.svg);
+      }
+      &.active::before {
+        background-image: url(../../assets/icon_2User_hover.svg);
+      }
+    }
+    &__conversations {
+      &::before {
+        background-image: url(../../assets/icon_folder.svg);
+      }
+      &:hover::before {
+        background-image: url(../../assets/icon_folder_hover.svg);
+      }
+      &.active::before {
+        background-image: url(../../assets/icon_folder_hover.svg);
+      }
+    }
+    &__settings {
+      &:before {
+        background-image: url(../../assets/icon_setting.svg);
+      }
+      &:hover::before {
+        background-image: url(../../assets/icon_setting_hover.svg);
+      }
+      &.active::before {
+        background-image: url(../../assets/icon_setting_hover.svg);
+      }
+    }
+  }
+}
